@@ -124,7 +124,7 @@ const char* AP_PASS = "12345678"; // 🔒 À personnaliser (min. 8 caractères)
 // false = ouvert seulement quand la box est injoignable (recommandé)
 const bool AP_SECOURS_TOUJOURS_ACTIF = false;
 
-const unsigned long AP_DELAI_ACTIVATION    = 30000;  // Box perdue depuis 30 s -> ouverture du réseau de secours
+const unsigned long AP_DELAI_ACTIVATION    = 10000;  // Box perdue depuis 10 s -> ouverture du réseau de secours (mini 5s)
 const unsigned long AP_DELAI_DESACTIVATION = 120000; // Box retrouvée depuis 2 min (et aucun smartphone connecté) -> fermeture
 
 // Pendant que le réseau de secours est ouvert, chaque recherche de la box
