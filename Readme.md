@@ -623,7 +623,7 @@ Exemple de structure :
 
 #define SECRET_OTA_PASSWORD "Mot_de_passe_OTA"
 
-// 🆕 V3 : mot de passe du réseau de secours ESP32-Secours (8 caractères minimum)
+//  mot de passe du réseau de secours ESP32-Secours (8 caractères minimum)
 #define SECRET_AP_PASS "Mot_de_passe_secours"
 ```
 
@@ -660,14 +660,9 @@ Il sélectionne ensuite le réseau connu offrant le meilleur RSSI.
 
 Le programme utilise une gestion non bloquante pour les recherches ultérieures.
 
-### 🆕 Aucun réseau connu au démarrage
-
-En V2, l'ESP32 exécutait `ESP.restart()` lorsqu'aucun réseau connu n'était joignable : il redémarrait en boucle et restait inaccessible pendant toute la coupure de la box.
-
-En V3, il :
-
+###  Aucun réseau connu au démarrage
 1. affiche `Box injoignable` sur l'OLED avec le nom du réseau de secours et l'adresse `http://192.168.4.1` ;
-2. ouvre immédiatement le réseau `ESP32-Secours` ;
+2. ouvre immédiatement le réseau `ESP32_Secours` ;
 3. continue à piloter les relais, les boutons et la page Web ;
 4. recherche la box en tâche de fond.
 
