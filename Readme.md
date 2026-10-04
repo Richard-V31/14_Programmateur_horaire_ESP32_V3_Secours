@@ -783,9 +783,9 @@ NTP Timeout
 
 le démarrage continue.
 
-🆕 En V3, si la box est injoignable au démarrage, cette attente est supprimée (inutile sans Internet). L'heure peut alors être réglée manuellement depuis la page Web.
+Si la box est injoignable au démarrage, cette attente est supprimée (inutile sans Internet). L'heure peut alors être réglée manuellement depuis la page Web.
 
-### 🆕 Lecture de l'heure non bloquante
+###  Lecture de l'heure non bloquante
 
 Par défaut, `getLocalTime()` attend jusqu'à **5 secondes** lorsque l'heure n'est pas encore réglée. Sans NTP, chaque appel figeait l'ESP32 (page Web qui ne répond plus, boutons ignorés).
 
@@ -1201,8 +1201,8 @@ Retourne notamment :
 - temps avant prochain changement ;
 - heure courante ;
 - qualité Wi-Fi ;
-- 🆕 `heureOK` (heure connue ou non) ;
-- 🆕 `heureSource` : `ntp`, `manuelle` ou `aucune`.
+- `heureOK` (heure connue ou non) ;
+- `heureSource` : `ntp`, `manuelle` ou `aucune`.
 
 ---
 
@@ -1224,8 +1224,8 @@ Retourne notamment :
 - signature du firmware ;
 - état de réinitialisation NVS ;
 - ancienne signature firmware ;
-- 🆕 état du réseau de secours : `apActif`, `apSsid`, `apIp`, `apClients` ;
-- 🆕 source de l'heure : `heureSource`.
+- état du réseau de secours : `apActif`, `apSsid`, `apIp`, `apClients` ;
+- source de l'heure : `heureSource`.
 
 ---
 
@@ -1296,7 +1296,7 @@ Cette route ne demande pas d'authentification.
 
 ---
 
-## 🆕 Réglage de l'heure
+##  Réglage de l'heure
 
 ```text
 POST /set-time
@@ -1376,8 +1376,8 @@ L'écran est organisé pour afficher notamment :
 - état des relais ;
 - mode AUTO/MANUEL ;
 - informations de programmation ;
-- 🆕 `Secours` et `AP 192.168.4.1` pendant une coupure de la box ;
-- 🆕 un astérisque après l'heure (`12:05*`) lorsque l'heure a été réglée à la main.
+- `Secours` et `AP 192.168.4.1` pendant une coupure de la box ;
+- un astérisque après l'heure (`12:05*`) lorsque l'heure a été réglée à la main.
 
 La constante :
 
@@ -1412,8 +1412,8 @@ ArduinoOTA.h
 Wire.h
 Adafruit_GFX.h
 Adafruit_SSD1306.h
-esp_sntp.h      // 🆕 V3 - fourni avec le core ESP32
-sys/time.h      // 🆕 V3 - fourni avec le core ESP32
+esp_sntp.h      //  fourni avec le core ESP32
+sys/time.h      //  fourni avec le core ESP32
 ```
 
 Selon la version du core ESP32 utilisée, `WiFi.h`, `Preferences.h`, `time.h`, `ESPmDNS.h`, `ArduinoOTA.h` et `Wire.h` sont fournies avec le support ESP32.
@@ -1490,8 +1490,8 @@ Ordre recommandé :
 14. vérifier les boutons physiques ;
 15. vérifier les horaires ;
 16. tester ensuite l'OTA ;
-17. 🆕 personnaliser `SECRET_AP_PASS` ;
-18. 🆕 tester le réseau de secours et le réglage manuel de l'heure (voir test ci-dessous).
+17. personnaliser `SECRET_AP_PASS` ;
+18. tester le réseau de secours et le réglage manuel de l'heure (voir test ci-dessous).
 
 ---
 
@@ -1577,11 +1577,11 @@ Si la plage est conservée, la gestion NVS fonctionne comme prévu.
 
 ---
 
-# 51. 🆕 Test du réseau de secours et de l'heure manuelle
+# 51. Test du réseau de secours et de l'heure manuelle
 
 1. débrancher la box ;
 2. attendre 30 s : l'OLED affiche `Secours` et `AP 192.168.4.1` ;
-3. connecter le smartphone à `ESP32-Secours` ;
+3. connecter le smartphone à `ESP32_Secours` ;
 4. ouvrir `http://192.168.4.1` et commander un relais ;
 5. redémarrer l'ESP32 box débranchée : le bandeau « Heure non réglée » apparaît ;
 6. appuyer sur « Prendre l'heure du smartphone » : l'horloge devient jaune, l'OLED affiche `*` ;
@@ -1634,11 +1634,11 @@ Vérifier :
 
 Le fonctionnement par IP ne dépend pas de mDNS.
 
-> 🛟 **Sans box**, connectez le smartphone au réseau `ESP32-Secours` et utilisez `http://192.168.4.1` (le nom `richardv.local` n'est pas utilisable sur le réseau de secours).
+> 🛟 **Sans box**, connectez le smartphone au réseau `ESP32_Secours` et utilisez `http://192.168.4.1` (le nom `richardv.local` n'est pas utilisable sur le réseau de secours).
 
 ---
 
-# 54. 🆕 Dépannage du réseau de secours
+# 54. Dépannage du réseau de secours
 
 | Symptôme | Vérification |
 |---|---|
@@ -1901,11 +1901,11 @@ Ne jamais manipuler un câblage secteur sous tension.
 | SCL | GPIO22 | I2C |
 | NTP | `pool.ntp.org` | Synchronisation heure |
 | NTP secondaire | `time.google.com` | Synchronisation heure |
-| 🆕 Réseau de secours | `ESP32-Secours` | Accès sans box |
-| 🆕 Adresse secours | `192.168.4.1` | Page Web via le secours |
-| 🆕 `AP_DELAI_ACTIVATION` | 30 s | Ouverture du secours |
-| 🆕 `AP_DELAI_DESACTIVATION` | 2 min | Fermeture du secours |
-| 🆕 `AP_SECOURS_TOUJOURS_ACTIF` | `false` | Secours permanent ou non |
+| Réseau de secours | `ESP32_Secours` | Accès sans box |
+| Adresse secours | `192.168.4.1` | Page Web via le secours |
+| `AP_DELAI_ACTIVATION` | 30 s | Ouverture du secours |
+| `AP_DELAI_DESACTIVATION` | 2 min | Fermeture du secours |
+| `AP_SECOURS_TOUJOURS_ACTIF` | `false` | Secours permanent ou non |
 
 ---
 
@@ -1931,7 +1931,7 @@ Ne jamais manipuler un câblage secteur sous tension.
 - [ ] retour AUTO testé
 - [ ] charges réelles testées avec précautions
 - [ ] 🆕 `SECRET_AP_PASS` personnalisé
-- [ ] 🆕 réseau `ESP32-Secours` testé avec le smartphone
+- [ ] 🆕 réseau `ESP32_Secours` testé avec le smartphone
 - [ ] 🆕 réglage manuel de l'heure testé
 
 ---
@@ -1978,11 +1978,11 @@ Caractéristiques importantes de cette version :
 - OTA ;
 - OLED ;
 - boutons physiques ;
-- 🆕 réseau Wi-Fi de secours `ESP32-Secours` ;
-- 🆕 réglage manuel de l'heure (`/set-time`) ;
-- 🆕 démarrage sans box sans redémarrage en boucle ;
-- 🆕 lecture de l'heure non bloquante.
-- 🆕 **V3.1** : protection contre l'ouverture du réseau par défaut `ESP_xxxxxx` sans mot de passe.
+- réseau Wi-Fi de secours `ESP32_Secours` ;
+- réglage manuel de l'heure (`/set-time`) ;
+- démarrage sans box sans redémarrage en boucle ;
+- lecture de l'heure non bloquante.
+-  protection contre l'ouverture du réseau par défaut `ESP_xxxxxx` sans mot de passe.
 
 La structure NVS n'est pas modifiée : `CONFIG_VERSION` reste à `2` et les réglages de la V2 sont conservés lors du passage en V3.
 
