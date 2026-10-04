@@ -36,9 +36,9 @@ Fonctions principales :
 - affichage de la puissance Wi-Fi en dBm et en pourcentage ;
 - validation des horaires avant sauvegarde ;
 - conservation des réglages lors d'une simple recompilation ou mise à jour OTA ;
-- 🆕 **V3** : réseau Wi-Fi de secours **`ESP32-Secours`** ouvert automatiquement quand la box est injoignable (accès smartphone sur `http://192.168.4.1`) ;
-- 🆕 **V3** : **réglage manuel de l'heure** depuis la page Web (heure du smartphone en un clic, ou saisie manuelle) ;
-- 🆕 **V3** : fonctionnement sans box au démarrage (plus de redémarrage en boucle) et lecture de l'heure non bloquante.
+- réseau Wi-Fi de secours **`ESP32-Secours`** ouvert automatiquement quand la box est injoignable (accès smartphone sur `http://192.168.4.1`) ;
+- réglage manuel de l'heure** depuis la page Web (heure du smartphone en un clic, ou saisie manuelle) ;
+- fonctionnement sans box au démarrage (plus de redémarrage en boucle) et lecture de l'heure non bloquante.
 
 ### Nouveautés de la version 3.0
 
