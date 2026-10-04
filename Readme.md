@@ -522,7 +522,7 @@ http://monesp32.local
 En cas de coupure de la box, l'interface reste accessible par le réseau de secours :
 
 ```text
-Réseau Wi-Fi : ESP32-Secours
+Réseau Wi-Fi : ESP32_Secours
 Adresse      : http://192.168.4.1
 ```
 
