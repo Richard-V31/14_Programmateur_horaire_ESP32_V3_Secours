@@ -1,7 +1,7 @@
 Ce que fait chaque ligne
 
       Variable              Valeur	         Rôle
-AP_DELAI_ACTIVATION&emsp;&emsp;&emsp;&emsp;30 s	&emsp;&emsp;Temps d'attente entre la perte de la box et l'ouverture d'ESP32_Secours. Il évite d'ouvrir le réseau de secours pour une micro-coupure (box qui change de canal, redémarrage rapide).<br>
+AP_DELAI_ACTIVATION&emsp;&emsp;&emsp;&emsp;30 s	&emsp;&emsp;&nbsp;Temps d'attente entre la perte de la box et l'ouverture d'ESP32_Secours. Il évite d'ouvrir le réseau de secours pour une micro-coupure (box qui change de canal, redémarrage rapide).<br>
 AP_DELAI_DESACTIVATION&emsp;&emsp;&nbsp;2 min&emsp;&emsp;Après le retour de la box, temps d'attente avant de fermer le réseau de secours, et seulement si plus aucun smartphone n'y est connecté. Il évite de fermer et rouvrir le secours si la box est encore instable.
 WIFI_RETRY_NORMAL&emsp;&emsp;&emsp;&emsp;&nbsp;10 s&emsp;&emsp;&nbsp;&nbsp;&nbsp;Box perdue et secours pas encore ouvert : l'ESP32 recherche la box toutes les 10 s.
 WIFI_RETRY_AP_SANS_CLIENT&emsp;30 s&emsp;&emsp;&nbsp;&nbsp;Secours ouvert, personne dessus : recherche de la box toutes les 30 s.
