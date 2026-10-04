@@ -1,4 +1,4 @@
-/*Ce que fait chaque ligne
+Ce que fait chaque ligne
 
 Ligne	Valeur	Rôle
 AP_DELAI_ACTIVATION	30 s	Temps d'attente entre la perte de la box et l'ouverture d'ESP32_Secours. Il évite d'ouvrir le réseau de secours pour une micro-coupure (box qui change de canal, redémarrage rapide).
@@ -34,4 +34,3 @@ Solution radicale : AP_SECOURS_TOUJOURS_ACTIF = true laisse le réseau de secour
                     un smartphone connecté au secours.
 
 Avec 10 s (const unsigned long AP_DELAI_ACTIVATION), vous devriez passer à environ 20 à 40 s au total, dont une bonne partie dépend du smartphone.
-*/
