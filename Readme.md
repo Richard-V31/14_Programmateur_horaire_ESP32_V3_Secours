@@ -36,7 +36,7 @@ Fonctions principales :
 - affichage de la puissance Wi-Fi en dBm et en pourcentage ;
 - validation des horaires avant sauvegarde ;
 - conservation des réglages lors d'une simple recompilation ou mise à jour OTA ;
-- réseau Wi-Fi de secours **`ESP32_Secours`** ouvert automatiquement quand la box est injoignable (accès smartphone sur `http://192.168.4.1`) ;
+- réseau Wi-Fi de secours **`ESP32_Secours`** ouvert automatiquement quand la box est injoignable (accès smartphone sur `http://192.168.5.1`) ;
 - **réglage manuel de l'heure** depuis la page Web (heure du smartphone en un clic, ou saisie manuelle) ;
 - fonctionnement sans box au démarrage (plus de redémarrage en boucle) et lecture de l'heure non bloquante ;
 - **portail captif** et serveur DNS sur le réseau de secours (`richardv.local` y fonctionne aussi) ;
@@ -52,7 +52,7 @@ Fonctions principales :
 | `getLocalTime()` non bloquant | Sans NTP, l'ESP32 ne se fige plus 5 s à chaque seconde |
 | Infos système enrichies | État du réseau de secours et origine de l'heure |
 | **V3.1** – Protection `ESP_xxxxxx` | Plus jamais de réseau par défaut ouvert sans mot de passe |
-| **V3.2** – Serveur DNS + portail captif | `richardv.local` et 192.168.4.1 fiables sur le réseau de secours |
+| **V3.2** – Serveur DNS + portail captif | `richardv.local` et 192.168.5.1 fiables sur le réseau de secours |
 | **V3.3** – Internet simulé | Plus besoin de couper les données mobiles du smartphone |
 
 ---
